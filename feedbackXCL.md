@@ -1,0 +1,20 @@
+## Feedback 
+
+### 10.9
+
+- Livraison du 5.9:
+    - Release: Elle n'a pas été faite
+    - Nommage des commits: Relisez le document Git.pdf et commencez à nommer correctement vos commits. N'hésitez pas à me demander si vous ne comprenez pas bien
+    - Rapport: 
+        - Pas besoin de mettre votre nom dans le nom de fichier: le rapport est dans votre repo Git, on sait qu'il vient de vous.
+        - Il manque les objectifs produit
+        - Qu'avez-vous prévu de faire les deux dernières semaines ?
+    - User stories:
+        - La mise en page est très bonne, avec des maquettes simples mais claires
+        - La syntaxe markdown pour faire une checkbox est `- [ ] `
+        - Il y a quelques tests d'acceptance qui ne sont pas vérifiables (voir commentaires dans les issues)
+        - Globalement, votre analyse fonctionnelle est vraiment bonne, bravo !
+    - Journal:
+        - La lisibilité n'est pas bonne à cause des pages vides
+        - Quand vous dites "Ecouter M. Carrel", ça ne donne pas d'information utile. De quoi a-t-il parlé ? qu'avez-vous retenu de ce qu'il a dit ?
+    - Grille d'évaluation: OK
