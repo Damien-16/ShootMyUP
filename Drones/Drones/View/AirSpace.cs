@@ -33,27 +33,14 @@ namespace Drones
         {
             switch (e.KeyCode)
             {
-                case Keys.W:
-                case Keys.Up:
-                    foreach (Drone drone in fleet)
-                    {
-                        drone.setY(drone.Y - 3);
-                    }
-                    break;
-
-                case Keys.S:
-                case Keys.Down:
-                    foreach (Drone drone in fleet)
-                    {
-                        drone.setY(drone.Y + 3);
-                    }
-                    break;
+                 
 
                 case Keys.A:
                 case Keys.Left:
                     foreach (Drone drone in fleet)
                     {
-                        drone.setX(drone.X - 3);
+                        drone.setX(drone.X - 20);
+                        //drone.SetImage("droneLeft.png");
                     }
                     break;
 
@@ -61,8 +48,9 @@ namespace Drones
                 case Keys.Right:
                     foreach (Drone drone in fleet)
                     {
-                  
-                            drone.setX(drone.X + 3);
+
+                        drone.setX(drone.X + 20);
+                        //drone.SetImage("droneRight.png");
                     }
                     break;
             }
@@ -88,6 +76,18 @@ namespace Drones
             foreach (Drone drone in fleet)
             {
                 drone.Update(interval);
+
+                if (drone.X < -20)
+                {
+                    drone.setX(WIDTH - 30);
+                }
+                else if (drone.X > WIDTH)
+                {
+                    drone.setX(-20);
+                }
+
+
+
             }
         }
 

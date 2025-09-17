@@ -20,7 +20,7 @@ namespace Drones
         // De manière textuelle
         public override string ToString()
         {
-            return $"{Name}";
+            return $"{Name} ({((int)((double)_charge / FULLCHARGE * 100)).ToString()}%)";
         }
 
     }
