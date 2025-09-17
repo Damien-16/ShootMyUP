@@ -25,8 +25,49 @@ namespace Drones
             // dimensions the same size as the drawing surface of the form.
             airspace = currentContext.Allocate(this.CreateGraphics(), this.DisplayRectangle);
             this.fleet = fleet;
+            InitializeComponent();
+            this.KeyPreview = true;
+            this.KeyDown += Form1_PressedKey;
         }
+        private void Form1_PressedKey(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.W:
+                case Keys.Up:
+                    foreach (Drone drone in fleet)
+                    {
+                        drone.setY(drone.Y - 3);
+                    }
+                    break;
 
+                case Keys.S:
+                case Keys.Down:
+                    foreach (Drone drone in fleet)
+                    {
+                        drone.setY(drone.Y + 3);
+                    }
+                    break;
+
+                case Keys.A:
+                case Keys.Left:
+                    foreach (Drone drone in fleet)
+                    {
+                        drone.setX(drone.X - 3);
+                    }
+                    break;
+
+                case Keys.D:
+                case Keys.Right:
+                    foreach (Drone drone in fleet)
+                    {
+                  
+                            drone.setX(drone.X + 3);
+                    }
+                    break;
+            }
+
+        }
         // Affichage de la situation actuelle
         private void Render()
         {

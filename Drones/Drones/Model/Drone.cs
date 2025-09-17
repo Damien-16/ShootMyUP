@@ -19,17 +19,20 @@
         }
         public int X { get { return _x;} }
         public int Y { get { return _y;} }
+        public void setX(int x) { _x = x; }
+        public void setY(int y) { _y = y; }
         public string Name { get { return _name;} }
+        
+       
+
 
         // Cette méthode calcule le nouvel état dans lequel le drone se trouve après
         // que 'interval' millisecondes se sont écoulées
         public void Update(int interval)
         {
-
-            _x += 2;                                    // Il s'est déplacé de 2 pixels vers la droite
-            _y += GlobalHelpers.alea.Next(-2, 3);       // Il s'est déplacé d'une valeur aléatoire vers le haut ou le bas
-            _charge--;                                  // Il a dépensé de l'énergie
+           
         }
+
 
     }
 }
