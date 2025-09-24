@@ -1,3 +1,5 @@
+using Drones.Properties;
+
 namespace Drones
 {
     // La classe AirSpace représente le territoire au dessus duquel les drones peuvent voler
@@ -33,7 +35,7 @@ namespace Drones
         {
             switch (e.KeyCode)
             {
-                 
+
 
                 case Keys.A:
                 case Keys.Left:
@@ -59,7 +61,7 @@ namespace Drones
         // Affichage de la situation actuelle
         private void Render()
         {
-            airspace.Graphics.Clear(Color.AliceBlue);
+            airspace.Graphics.DrawImage(Resources.background, 0, 0, WIDTH, HEIGHT);
 
             // draw drones
             foreach (Drone drone in fleet)
@@ -80,6 +82,7 @@ namespace Drones
                 if (drone.X < -20)
                 {
                     drone.setX(WIDTH - 30);
+                    Console.WriteLine("cbon");
                 }
                 else if (drone.X > WIDTH)
                 {
@@ -96,6 +99,11 @@ namespace Drones
         {
             this.Update(ticker.Interval);
             this.Render();
+        }
+
+        private void AirSpace_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

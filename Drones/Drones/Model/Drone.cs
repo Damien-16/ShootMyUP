@@ -1,7 +1,6 @@
 ﻿
 namespace Drones
 {
-    // Cette partie de la classe Drone définit ce qu'est un drone par un modèle numérique
     public partial class Drone
     {
       
@@ -25,8 +24,7 @@ namespace Drones
        
 
 
-        // Cette méthode calcule le nouvel état dans lequel le drone se trouve après
-        // que 'interval' millisecondes se sont écoulées
+       
         public void Update(int interval)
         {
                                              
