@@ -1,3 +1,4 @@
+using Drones.Model;
 using Drones.Properties;
 
 namespace Drones
@@ -14,23 +15,37 @@ namespace Drones
         // La flotte est l'ensemble des drones qui évoluent dans notre espace aérien
         private List<Drone> fleet;
 
+
+        private List<Ennemi> ennemis;
+
         BufferedGraphicsContext currentContext;
         BufferedGraphics airspace;
 
         // Initialisation de l'espace aérien avec un certain nombre de drones
-        public AirSpace(List<Drone> fleet)
+        //public AirSpace(List<Drone> fleet)
+        //{
+        //    InitializeComponent();
+        //    currentContext = BufferedGraphicsManager.Current;
+        //    airspace = currentContext.Allocate(this.CreateGraphics(), this.DisplayRectangle);
+        //    this.fleet = fleet;
+        //    InitializeComponent();
+        //    this.KeyPreview = true;
+        //    this.KeyDown += Form1_PressedKey;
+        //}
+        public AirSpace(List<Drone> fleet, List<Ennemi> ennemis)
         {
             InitializeComponent();
-            // Gets a reference to the current BufferedGraphicsContext
             currentContext = BufferedGraphicsManager.Current;
-            // Creates a BufferedGraphics instance associated with this form, and with
-            // dimensions the same size as the drawing surface of the form.
             airspace = currentContext.Allocate(this.CreateGraphics(), this.DisplayRectangle);
+
             this.fleet = fleet;
+            this.ennemis = ennemis;
             InitializeComponent();
             this.KeyPreview = true;
             this.KeyDown += Form1_PressedKey;
         }
+
+
         private void Form1_PressedKey(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
@@ -69,7 +84,15 @@ namespace Drones
                 drone.Render(airspace);
             }
 
+
+            foreach (Ennemi Ennemi in ennemis)
+            {
+             
+            }
+
             airspace.Render();
+
+           
         }
 
         // Calcul du nouvel état après que 'interval' millisecondes se sont écoulées
@@ -82,7 +105,6 @@ namespace Drones
                 if (drone.X < -20)
                 {
                     drone.setX(WIDTH - 30);
-                    Console.WriteLine("cbon");
                 }
                 else if (drone.X > WIDTH)
                 {
