@@ -20,11 +20,12 @@ namespace Shootmyup
 
 
             List<Ennemi> ennemis= new List<Ennemi>();
-            ennemis.Add(new Ennemi(AirSpace.WIDTH / 2-20, 10,"bob"));
+            ennemis.Add(new Ennemi(AirSpace.WIDTH / 2-20, 10));
 
+            List<Projectil> projectils= new List<Projectil>();
 
             // Démarrage
-            Application.Run(new AirSpace(fleet, ennemis));
+            Application.Run(new AirSpace(fleet, ennemis, projectils));
         }
     }
 }

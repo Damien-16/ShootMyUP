@@ -1,5 +1,6 @@
 using Shootmyup;
 using Shootmyup.Properties;
+using System.Reflection;
 
 namespace Shootmyup
 {
@@ -15,19 +16,19 @@ namespace Shootmyup
         // La flotte est l'ensemble des drones qui évoluent dans notre espace aérien
         private List<Joueur> fleet;
 
-
         private List<Ennemi> ennemis;
+        private List<Projectil> projectils;
 
         BufferedGraphicsContext currentContext;
         BufferedGraphics airspace;
 
-       
-        public AirSpace(List<Joueur> fleet, List<Ennemi> ennemis)
+        public AirSpace(List<Joueur> fleet, List<Ennemi> ennemis, List<Projectil> projectils)
         {
             InitializeComponent();
             currentContext = BufferedGraphicsManager.Current;
             airspace = currentContext.Allocate(this.CreateGraphics(), this.DisplayRectangle);
 
+            this.projectils = projectils;
             this.fleet = fleet;
             this.ennemis = ennemis;
             InitializeComponent();
@@ -38,30 +39,45 @@ namespace Shootmyup
 
         private void Form1_PressedKey(object sender, KeyEventArgs e)
         {
-            switch (e.KeyCode)
+            foreach (Joueur joueur in fleet)
             {
 
 
-                case Keys.A:
-                case Keys.Left:
-                    foreach (Joueur drone in fleet)
-                    {
-                        drone.setX(drone.X - 20);
-                        //drone.SetImage("droneLeft.png");
-                    }
-                    break;
+                switch (e.KeyCode)
+                {
 
-                case Keys.D:
-                case Keys.Right:
-                    foreach (Joueur drone in fleet)
-                    {
 
-                        drone.setX(drone.X + 20);
-                        //drone.SetImage("droneRight.png");
-                    }
-                    break;
+                    case Keys.A:
+                    case Keys.Left:
+                        foreach (Joueur drone in fleet)
+                        {
+                            drone.setX(drone.X - 20);
+                        }
+                        break;
+
+                    case Keys.D:
+                    case Keys.Right:
+                        foreach (Joueur drone in fleet)
+                        {
+
+                            drone.setX(drone.X + 20);
+                        }
+                        break;
+
+                    case Keys.Space:
+                        projectils.Add(new Projectil(joueur.X+25, joueur.Y+60));
+                        {
+
+                        }
+                        break;
+                    case Keys.Escape:
+                        {
+                            this.Close();
+                        }
+                        break;
+
+                }
             }
-
         }
         // Affichage de la situation actuelle
         private void Render()
@@ -77,12 +93,17 @@ namespace Shootmyup
 
             foreach (Ennemi Ennemi in ennemis)
             {
-             Ennemi.Render(airspace);
+                Ennemi.Render(airspace);
             }
+            foreach (Projectil projectil in projectils)
+            {
+                projectil.Render(airspace);
+            }
+
 
             airspace.Render();
 
-           
+
         }
 
         // Calcul du nouvel état après que 'interval' millisecondes se sont écoulées
@@ -108,12 +129,16 @@ namespace Shootmyup
 
                 if (ennemis.X < -20)
                 {
-                    int dir = ennemis.dir =1;
+                    int dir = ennemis.dir = 1;
                 }
-                else if (ennemis.X > WIDTH-40)
+                else if (ennemis.X > WIDTH - 40)
                 {
                     ennemis.dir = 2;
                 }
+            }
+            foreach(Projectil projectil in projectils)
+            {
+                projectil.Update(interval);
             }
         }
 
