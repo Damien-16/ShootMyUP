@@ -13,7 +13,7 @@ namespace Shootmyup
 
         public void Render(BufferedGraphics drawingSpace)
         {
-            drawingSpace.Graphics.DrawImage(Resources.fonc, X, Y, 100, 100);
+            drawingSpace.Graphics.DrawImage(Resources.ennemi, X, Y, 100, 100);
         }
 
       

@@ -100,9 +100,20 @@ namespace Shootmyup
                 {
                     drone.setX(-20);
                 }
+            }
 
+            foreach (Ennemi ennemis in ennemis)
+            {
+                ennemis.Update(interval);
 
-
+                if (ennemis.X < -20)
+                {
+                    int dir = ennemis.dir =1;
+                }
+                else if (ennemis.X > WIDTH-40)
+                {
+                    ennemis.dir = 2;
+                }
             }
         }
 
