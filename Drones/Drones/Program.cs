@@ -1,6 +1,6 @@
-using Drones.Model;
+using Shootmyup;
 
-namespace Drones
+namespace Shootmyup
 {
     internal static class Program
     {
@@ -15,12 +15,12 @@ namespace Drones
             ApplicationConfiguration.Initialize();
 
             // Création de la flotte de drones
-            List<Drone> fleet= new List<Drone>();
-            fleet.Add(new Drone(AirSpace.WIDTH / 2, AirSpace.HEIGHT - 100, "Player"));
+            List<Joueur> fleet= new List<Joueur>();
+            fleet.Add(new Joueur(AirSpace.WIDTH / 2, AirSpace.HEIGHT - 100, "Player"));
 
 
             List<Ennemi> ennemis= new List<Ennemi>();
-            ennemis.Add(new Ennemi(AirSpace.WIDTH / 2, AirSpace.HEIGHT + 100, "bob"));
+            ennemis.Add(new Ennemi(AirSpace.WIDTH / 2-20, 10,"bob"));
 
 
             // Démarrage

@@ -1,7 +1,7 @@
 ﻿
-namespace Drones
+namespace Shootmyup
 {
-    public partial class Drone
+    public partial class Joueur
     {
       
         private string _name;                           // Un nom
@@ -9,7 +9,7 @@ namespace Drones
         private int _y;                                 // Position en Y depuis le haut de l'espace aérien
 
         // Constructeur
-        public Drone(int x, int y, string name)
+        public Joueur(int x, int y, string name)
         {
             _x = x;
             _y = y;

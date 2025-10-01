@@ -1,4 +1,4 @@
-﻿namespace Drones
+﻿namespace Shootmyup
 {
     partial class AirSpace
     {

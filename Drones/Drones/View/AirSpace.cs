@@ -1,7 +1,7 @@
-using Drones.Model;
-using Drones.Properties;
+using Shootmyup;
+using Shootmyup.Properties;
 
-namespace Drones
+namespace Shootmyup
 {
     // La classe AirSpace représente le territoire au dessus duquel les drones peuvent voler
     // Il s'agit d'un formulaire (une fenêtre) qui montre une vue 2D depuis en dessus
@@ -13,7 +13,7 @@ namespace Drones
         public static readonly int HEIGHT = 600;
 
         // La flotte est l'ensemble des drones qui évoluent dans notre espace aérien
-        private List<Drone> fleet;
+        private List<Joueur> fleet;
 
 
         private List<Ennemi> ennemis;
@@ -21,18 +21,8 @@ namespace Drones
         BufferedGraphicsContext currentContext;
         BufferedGraphics airspace;
 
-        // Initialisation de l'espace aérien avec un certain nombre de drones
-        //public AirSpace(List<Drone> fleet)
-        //{
-        //    InitializeComponent();
-        //    currentContext = BufferedGraphicsManager.Current;
-        //    airspace = currentContext.Allocate(this.CreateGraphics(), this.DisplayRectangle);
-        //    this.fleet = fleet;
-        //    InitializeComponent();
-        //    this.KeyPreview = true;
-        //    this.KeyDown += Form1_PressedKey;
-        //}
-        public AirSpace(List<Drone> fleet, List<Ennemi> ennemis)
+       
+        public AirSpace(List<Joueur> fleet, List<Ennemi> ennemis)
         {
             InitializeComponent();
             currentContext = BufferedGraphicsManager.Current;
@@ -54,7 +44,7 @@ namespace Drones
 
                 case Keys.A:
                 case Keys.Left:
-                    foreach (Drone drone in fleet)
+                    foreach (Joueur drone in fleet)
                     {
                         drone.setX(drone.X - 20);
                         //drone.SetImage("droneLeft.png");
@@ -63,7 +53,7 @@ namespace Drones
 
                 case Keys.D:
                 case Keys.Right:
-                    foreach (Drone drone in fleet)
+                    foreach (Joueur drone in fleet)
                     {
 
                         drone.setX(drone.X + 20);
@@ -79,7 +69,7 @@ namespace Drones
             airspace.Graphics.DrawImage(Resources.background, 0, 0, WIDTH, HEIGHT);
 
             // draw drones
-            foreach (Drone drone in fleet)
+            foreach (Joueur drone in fleet)
             {
                 drone.Render(airspace);
             }
@@ -87,7 +77,7 @@ namespace Drones
 
             foreach (Ennemi Ennemi in ennemis)
             {
-             
+             Ennemi.Render(airspace);
             }
 
             airspace.Render();
@@ -98,7 +88,7 @@ namespace Drones
         // Calcul du nouvel état après que 'interval' millisecondes se sont écoulées
         private void Update(int interval)
         {
-            foreach (Drone drone in fleet)
+            foreach (Joueur drone in fleet)
             {
                 drone.Update(interval);
 

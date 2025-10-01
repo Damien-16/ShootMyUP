@@ -1,12 +1,10 @@
-﻿using Drones.Helpers;
-using Drones.Properties;
+﻿using Shootmyup.Helpers;
+using Shootmyup.Properties;
 using System.Resources;
 
-namespace Drones
+namespace Shootmyup
 {
-    // Cette partie de la classe Drone définit comment on peut voir un drone
-
-    public partial class Drone
+      public partial class Joueur
     {
         private Pen droneBrush = new Pen(new SolidBrush(Color.Purple), 3);
 

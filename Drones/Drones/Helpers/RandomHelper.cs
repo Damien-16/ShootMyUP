@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Drones.Helpers
+namespace Shootmyup.Helpers
 {
     internal class RandomHelper
     {
