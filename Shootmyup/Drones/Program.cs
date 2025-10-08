@@ -1,4 +1,5 @@
 using Shootmyup;
+using Shootmyup.Model;
 
 namespace Shootmyup
 {
@@ -24,8 +25,11 @@ namespace Shootmyup
 
             List<Projectil> projectils= new List<Projectil>();
 
+            List<Obstacle> obstacles= new List<Obstacle>();
+            
+
             // Démarrage
-            Application.Run(new AirSpace(fleet, ennemis, projectils));
+            Application.Run(new AirSpace(fleet, ennemis, projectils,obstacles));
         }
     }
 }

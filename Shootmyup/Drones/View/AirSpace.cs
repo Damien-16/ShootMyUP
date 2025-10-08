@@ -1,4 +1,5 @@
 using Shootmyup;
+using Shootmyup.Model;
 using Shootmyup.Properties;
 using System.Reflection;
 
@@ -18,17 +19,30 @@ namespace Shootmyup
 
         private List<Ennemi> ennemis;
         private List<Projectil> projectils;
+        private List<Obstacle> obstacles = new List<Obstacle>();
+        private Random rand = new Random();
+
+
+
 
         BufferedGraphicsContext currentContext;
         BufferedGraphics airspace;
 
-        public AirSpace(List<Joueur> fleet, List<Ennemi> ennemis, List<Projectil> projectils)
+        public AirSpace(List<Joueur> fleet, List<Ennemi> ennemis, List<Projectil> projectils,List<Obstacle>obstacles)
         {
             InitializeComponent();
             currentContext = BufferedGraphicsManager.Current;
             airspace = currentContext.Allocate(this.CreateGraphics(), this.DisplayRectangle);
 
             this.projectils = projectils;
+            this.obstacles = obstacles;
+            for (int i = 0; i < 5; i++)
+            {
+                int x = rand.Next(50, WIDTH - 100);
+                int y = rand.Next(100, HEIGHT - 150);
+                obstacles.Add(new Obstacle(x, y));
+            }
+
             this.fleet = fleet;
             this.ennemis = ennemis;
             InitializeComponent();
@@ -65,7 +79,7 @@ namespace Shootmyup
                         break;
 
                     case Keys.Space:
-                        projectils.Add(new Projectil(joueur.X+25, joueur.Y+60));
+                        projectils.Add(new Projectil(joueur.X + 25, joueur.Y + 60));
                         {
 
                         }
@@ -100,12 +114,24 @@ namespace Shootmyup
                 projectil.Render(airspace);
             }
 
+            foreach (Obstacle obstacle in obstacles)
+            {
+                obstacle.Render(airspace);
+            }
+            if (obstacles.Count < 5)
+            {
+                
+                    int x = rand.Next(50, WIDTH - 100);
+                    int y = rand.Next(100, HEIGHT - 150);
+                    obstacles.Add(new Obstacle(x, y));
+                
+            }
 
             airspace.Render();
 
 
         }
-
+        
         // Calcul du nouvel état après que 'interval' millisecondes se sont écoulées
         private void Update(int interval)
         {
@@ -136,10 +162,32 @@ namespace Shootmyup
                     ennemis.dir = 2;
                 }
             }
-            foreach(Projectil projectil in projectils)
+            foreach (Projectil projectil in projectils)
             {
                 projectil.Update(interval);
             }
+            foreach (var projectil in projectils.ToList())
+            {
+                projectil.Update(interval);
+
+                foreach (var obstacle in obstacles.ToList())
+                {
+                    if (projectil.X >= obstacle.X &&
+                        projectil.X <= obstacle.X + Obstacle.SIZE &&
+                        projectil.Y >= obstacle.Y &&
+                        projectil.Y <= obstacle.Y + Obstacle.SIZE)
+                    {
+                        obstacle.TakeDamage(1);
+                        projectils.Remove(projectil);
+
+                        if (obstacle.Health <= 0)
+                            obstacles.Remove(obstacle);
+
+                        break;
+                    }
+                }
+            }
+
         }
 
         // Méthode appelée à chaque frame
@@ -153,5 +201,8 @@ namespace Shootmyup
         {
 
         }
+
+
+
     }
 }
