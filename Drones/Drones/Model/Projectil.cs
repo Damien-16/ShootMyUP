@@ -25,7 +25,7 @@ namespace Shootmyup
         public void Update(int interval)
         {
 
-            _y -= 50;
+            _y -= 45;
             
         }
     }
