@@ -23,3 +23,13 @@
   ### 16.9
 
   - Je ne vois pas votre projet Github. Merci de m'y inviter.
+
+  ### 8.10
+
+  - Il faut faire de l'ordre dans votre repo:
+    - Faire un dossier `doc` à la racine du repo, comme demandé en début de projet
+    - Supprimer le dossier `Jeu` qui ne contient rien de significatif (il me semble)
+    - Remplacer la thématique 'Drone' par votre thème
+  - Votre journal de travail (ce que j'en vois en tout cas) n'est pas à jour: il manque le 1.10. On dirait un fichier Excel; si c'est le cas: mettez-le dans votre repo (dans `doc` justement). Si vous utilisez un autre outil, veillez à mettre à jour le pdf régulièrement (ou me donner accès à votre outil)
+  - Le code a bien avancé
+  - Le rapport non
