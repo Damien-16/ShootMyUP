@@ -38,23 +38,23 @@
 
 Les valeurs possibles du résultat sont: LA (Largement Acquis), A (Acquis), I (Insuffisant), NA (non acquis)
 
-| Critère                    | Résultat | Commentaire |
-| -------------------------- | -------- | ----------- |
-| Avancement Obstacles       |          |             |
-| Avancement Joueur          |          |             |
-| Avancement Tirs            |          |             |
-| Avancement ennemis         |          |             |
-| Avancement score           |          |             |
-| Qualité Présentation       |          |             |
-| Qualité Commentaires       |          |             |
-| Qualité Conventions        |          |             |
-| POO                        |          |             |
-| Processus Journal          |          |             |
-| Processus Git              |          |             |
-| Processus Livraison        |          |             |
-| Expression User Stories    |          |             |
-| Expression Rapport Fome    |          |             |
-| Expression Rapport Contenu |          |             |
-| Ecologie (gitignore)       |          |             |
-| Comportement collectif     |          |             |
-| Comportement individuel    |          |             |
+| Critère                    | Résultat | Commentaire                                                                                                                                                                                                                         |
+| -------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Avancement Obstacles       | I        | il reste à gérer les contacts avec les ennemis et les tirs                                                                                                                                                                          |
+| Avancement Joueur          | A        | je vous suggère fortement de rendre votre jeu plus intéressant en augmentant la taille de la fenêtre de jeu                                                                                                                         |
+| Avancement Tirs            | A        |                                                                                                                                                                                                                                     |
+| Avancement ennemis         | A        |                                                                                                                                                                                                                                     |
+| Avancement score           | NA       |                                                                                                                                                                                                                                     |
+| Qualité Présentation       | A        | Diminuez le nombre de lignes blanches. On ne devrait jamais avoir plus de deux lignes blanches de suite.                                                                                                                            |
+| Qualité Commentaires       | A        |                                                                                                                                                                                                                                     |
+| Qualité Conventions        | I        | regroupez les getter/setter pour X et Y                                                                                                                                                                                             |
+| POO                        | A        |                                                                                                                                                                                                                                     |
+| Processus Journal          | NA       | votre journal ne contient rien concernant le 8 octobre.<br> je ne vois pas le fichier Excel dans votre repo. Je vous avais pourtant demandé de l'y mettre dans mon dernier feed-back                                                |
+| Processus Git              | A        |                                                                                                                                                                                                                                     |
+| Processus Livraison        | NA       | il manque trois choses qui doivent être associé à une livraison : le jour de travail, le rapport et la grille d'évaluation                                                                                                          |
+| Expression User Stories    | LA       |                                                                                                                                                                                                                                     |
+| Expression Rapport Forme   | I        | quel que soit l'outil que vous utilisez pour rédiger votre rapport, ajoutez quand même une page de garde avec un titre et une image                                                                                                 |
+| Expression Rapport Contenu | NA       | le rapport est pour ainsi dire vide<br>Mettez également le document source dans le repo, au même titre que votre journal de travail. Si vous perdez un de ces deux fichiers, vous serez très embêté et les PDF ne serviront à rien. |
+| Ecologie (gitignore)       | A        |                                                                                                                                                                                                                                     |
+| Comportement collectif     | A        |                                                                                                                                                                                                                                     |
+| Comportement individuel    | A        |                                                                                                                                                                                                                                     |
