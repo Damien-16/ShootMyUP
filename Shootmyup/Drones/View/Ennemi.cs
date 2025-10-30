@@ -13,10 +13,21 @@ namespace Shootmyup
 
         public void Render(BufferedGraphics drawingSpace)
         {
-            drawingSpace.Graphics.DrawImage(Resources.ennemi, X, Y, 100, 100);
+            // Dessin de l’image de l’ennemi
+            drawingSpace.Graphics.DrawImage(Resources.ennemi, X, Y, SIZE, SIZE);
+
+            // Dessin des cœurs sous l’ennemi
+            int heartSize = 20;
+            int startX = X + (SIZE / 2) - ((Health * heartSize) / 2);
+            int heartY = Y + SIZE - 10; // sous l’ennemi
+
+            for (int i = 0; i < Health; i++)
+            {
+                drawingSpace.Graphics.DrawImage(Resources.heart, startX + i * heartSize, heartY, heartSize, heartSize);
+            }
         }
 
-      
+
 
     }
 }
