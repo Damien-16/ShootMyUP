@@ -58,3 +58,14 @@ Les valeurs possibles du résultat sont: LA (Largement Acquis), A (Acquis), I (I
 | Ecologie (gitignore)       | A        |                                                                                                                                                                                                                                     |
 | Comportement collectif     | A        |                                                                                                                                                                                                                                     |
 | Comportement individuel    | A        |                                                                                                                                                                                                                                     |
+
+## Final
+
+Votre jeu est bien terminé avec tous les éléments demandés. Bravo.  
+Le rapport est un peu court : on est assez loin des 200 mots demandés. Mais il couvre toutes les sections demandées. Il reste malgré tout un problème : la section concernant l'utilisation de l'IA. Expliquez-moi avec des mots naturels comment vous avez utilisé l'IA durant l'ensemble du projet.
+
+La livraison est incomplète.
+
+Pour que je valide votre projet, je vous demande deux choses à faire d'ici au 7 novembre :
+  1. Écrire la section sur l'usage de l'IA correctement
+  2.  faire une livraison complète.
