@@ -69,3 +69,9 @@ La livraison est incomplète.
 Pour que je valide votre projet, je vous demande deux choses à faire d'ici au 7 novembre :
   1. Écrire la section sur l'usage de l'IA correctement
   2.  faire une livraison complète.
+
+## Remédiation
+
+Il reste un défaut dans votre projet : vous avez joint votre journal de travail et votre rapport à la livraison, mais vous avez utilisé les formats natifs de Word et Excel. Rappelez-vous à l'avenir que toute livraison de document doit être faite en format PDF.
+
+Je valide votre projet malgré ce petit des fous restant
